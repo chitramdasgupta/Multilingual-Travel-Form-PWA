@@ -7,7 +7,7 @@
         </select>
       </div>
       <header class="header">
-        <h1>{{ jsonData.data.form_name }}</h1>
+        <h1 class="heading">{{ jsonData.data.form_name }}</h1>
         <img :src="jsonData.data.banner" alt="Banner image" height="20" width="20" />
         <p>{{ jsonData.data.header[this.language] || jsonData.data.header.en }}</p>
       </header>
@@ -112,19 +112,23 @@ export default {
   align-items: center;
 }
 
-.header {
-  width: 60%;
+.heading {
+  text-decoration: underline;
 }
 
 .main {
-  width: 50%;
+  width: 100%;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
+@media (min-width: 768px) {
+  .main {
+    width: 750px;
+  }
+}
+
 .form-main {
-  padding-top: 2rem;
-  padding-bottom: 2rem;
-  padding-left: 2rem;
+  padding: 1.5rem;
 }
 
 .form-field {
@@ -134,13 +138,15 @@ export default {
 .form-input {
   padding: 0.25rem;
   border: 1px solid #7c7c7c;
-  width: 90%;
+  width: -webkit-fill-available;
+  width: -moz-available;
 }
 
 .form-submit {
-  padding: 0.25rem;
-  border: none;
+  padding: 0.5rem 0.75rem 0.5rem 0.75rem;
   box-shadow: rgba(0, 0, 0, 0.25) 0px 5px 15px;
   text-wrap: wrap;
+  font-weight: 700;
+  color: #fff;
 }
 </style>
