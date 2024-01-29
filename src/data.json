@@ -1,0 +1,764 @@
+{
+  "success": true,
+  "data": {
+    "id": 1,
+    "form_name": "Tripraasa Group Journey Passport Submission",
+    "languages": ["en", "hi", "gj", "ka", "mt", "tm", "tl"],
+    "banner": "Sample Banner Image URL",
+    "add_member": 1,
+    "header": {
+      "en": "Header Text",
+      "hi": "शीर्ष-सूचना पाठ"
+    },
+    "footer": {
+      "en": "Footer Text",
+      "hi": "पाद-सूचना पाठ"
+    },
+    "submit_button_label": "Secure Travel Reservations",
+    "submit_success_action": "message",
+    "submit_success_content": "Bravo! Your Journey with Tripraasa Begins Now.",
+    "background_color": "#F7F8F9",
+    "form_background_color": "#FFFFFF",
+    "form_submit_button_color": "#0E90D9",
+    "attribute_label_color": "#546E7A",
+    "attributes": [
+      {
+        "id": 1,
+        "code": "date_of_birth",
+        "name": {
+          "en": "Date Of Birth",
+          "gj": "જન્મ તારીખ",
+          "hi": "जन्मतिथि",
+          "ka": "ಹುಟ್ತಿದ ದಿನ",
+          "mt": "जन्मतारीख",
+          "tm": "பிறந்த தேதி",
+          "tl": "పుట్టిన తేది"
+        },
+        "placeholder": {
+          "en": "Select Date Of Birth",
+          "gj": "જન્મ તારીખ પસંદ કરો",
+          "hi": "जन्मतिथि चुनें",
+          "ka": "ಹುಟ್ಟಿದ ದಿನಾಂಕವನ್ನು ಆಯ್ಕೆಮಾಡಿ",
+          "mt": "जन्मतारीख निवडा",
+          "tm": "பிறந்த தேதியைத் தேர்ந்தெடுக்கவும்",
+          "tl": "పుట్టిన తేదీని ఎంచుకోండి"
+        },
+        "type": "date",
+        "lookup_type": "traveller_forms",
+        "sort_order": null,
+        "validation": null,
+        "is_required": 1,
+        "is_unique": 0,
+        "quick_add": 1,
+        "is_user_defined": 0
+      },
+      {
+        "id": 2,
+        "code": "gender",
+        "name": {
+          "en": "Gender",
+          "gj": "જાતિ",
+          "hi": "लिंग",
+          "ka": "ಲಿಂಗ",
+          "mt": "लिंग",
+          "tm": "பாலினம்",
+          "tl": "లింగం"
+        },
+        "placeholder": [],
+        "type": "select",
+        "lookup_type": "traveller_forms",
+        "sort_order": null,
+        "validation": null,
+        "is_required": 1,
+        "is_unique": 0,
+        "quick_add": 1,
+        "is_user_defined": 0,
+        "options": [
+          {
+            "id": 1,
+            "name": "Male"
+          },
+          {
+            "id": 2,
+            "name": "Female"
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "code": "pan_card_number",
+        "name": {
+          "en": "PAN Card Number",
+          "gj": "PAN કાર્ડ નંબર",
+          "hi": "पैन कार्ड नंबर",
+          "ka": "PAN ಕಾರ್ಡ್ ಸಂಖ್ಯೆಯನ್ನು",
+          "mt": "पॅन कार्ड क्रमांक",
+          "tm": "பான் கார்டு எண்ணை",
+          "tl": "పాన్ కార్డ్ నంబర్‌ను"
+        },
+        "placeholder": {
+          "en": "Enter PAN Card Number",
+          "gj": "PAN કાર્ડ નંબર દાખલ કરો",
+          "hi": "पैन कार्ड नंबर दर्ज करें",
+          "ka": "PAN ಕಾರ್ಡ್ ಸಂಖ್ಯೆಯನ್ನು ನಮೂದಿಸಿ",
+          "mt": "पॅन कार्ड क्रमांक टाका",
+          "tm": "பான் கார்டு எண்ணை உள்ளிடவும்",
+          "tl": "పాన్ కార్డ్ నంబర్‌ను"
+        },
+        "type": "text",
+        "lookup_type": "traveller_forms",
+        "sort_order": null,
+        "validation": "pan_card",
+        "is_required": 1,
+        "is_unique": 0,
+        "quick_add": 1,
+        "is_user_defined": 0
+      },
+      {
+        "id": 4,
+        "code": "address",
+        "name": {
+          "en": "Address",
+          "gj": "સરનામું",
+          "hi": "पता",
+          "ka": "ವಿಳಾಸ",
+          "mt": "पत्ता",
+          "tm": "முகவரி",
+          "tl": "చిరునామా"
+        },
+        "placeholder": {
+          "en": "Enter Address",
+          "gj": "સરનામું દાખલ કરો",
+          "hi": "पता दर्ज करें",
+          "ka": "ವಿಳಾಸವನ್ನು ನಮೂದಿಸಿ",
+          "mt": "पत्ता द्या",
+          "tm": "முகவரி உள்ளிடவும்",
+          "tl": "చిరునామా నమోదు చేయండి"
+        },
+        "type": "text",
+        "lookup_type": "traveller_forms",
+        "sort_order": null,
+        "validation": null,
+        "is_required": 1,
+        "is_unique": 0,
+        "quick_add": 1,
+        "is_user_defined": 0
+      },
+      {
+        "id": 5,
+        "code": "city",
+        "name": {
+          "en": "City",
+          "gj": "શહેર",
+          "hi": "शहर",
+          "ka": "ನಗರ",
+          "mt": "शहर",
+          "tm": "நகரம்",
+          "tl": "నగరం"
+        },
+        "placeholder": {
+          "en": "Enter City",
+          "gj": "શહેર દાખલ કરો",
+          "hi": "शहर दर्ज करें",
+          "ka": "ನಗರವನ್ನು ನಮೂದಿಸಿ",
+          "mt": "शहर टाका",
+          "tm": "நகரம் உள்ளிடவும்",
+          "tl": "నగరం నమోదు చేయండి"
+        },
+        "type": "text",
+        "lookup_type": "traveller_forms",
+        "sort_order": null,
+        "validation": null,
+        "is_required": 1,
+        "is_unique": 0,
+        "quick_add": 1,
+        "is_user_defined": 0
+      },
+      {
+        "id": 6,
+        "code": "state",
+        "name": {
+          "en": "State",
+          "gj": "રાજ્ય",
+          "hi": "राज्य",
+          "ka": "ರಾಜ್ಯ",
+          "mt": "राज्य",
+          "tm": "மாநிலம்",
+          "tl": "రాష్ట్రం"
+        },
+        "placeholder": {
+          "en": "Select State",
+          "gj": "રાજ્ય પસંદ કરો",
+          "hi": "राज्य चुनें",
+          "ka": "ರಾಜ್ಯ ಆಯ್ಕೆಮಾಡಿ",
+          "mt": "राज्य निवडा",
+          "tm": "மாநிலம் தேர்வு செய்க",
+          "tl": "రాష్ట్రం ఎంచుకోండి"
+        },
+        "type": "select",
+        "lookup_type": "states",
+        "sort_order": null,
+        "validation": null,
+        "is_required": 1,
+        "is_unique": 0,
+        "quick_add": 1,
+        "is_user_defined": 0
+      },
+      {
+        "id": 7,
+        "code": "country",
+        "name": {
+          "en": "Country",
+          "gj": "દેશ",
+          "hi": "देश",
+          "ka": "ದೇಶ",
+          "mt": "देश",
+          "tm": "நாடு",
+          "tl": "దేశం"
+        },
+        "placeholder": {
+          "en": "Enter Country",
+          "gj": "દેશ દાખલ કરો",
+          "hi": "देश दर्ज करें",
+          "ka": "ದೇಶವನ್ನು ನಮೂದಿಸಿ",
+          "mt": "देश लिहा",
+          "tm": "நாடு உள்ளிடவும்",
+          "tl": "దేశానికి నమోదు చేయండి"
+        },
+        "type": "text",
+        "lookup_type": "traveller_forms",
+        "sort_order": null,
+        "validation": null,
+        "is_required": 1,
+        "is_unique": 0,
+        "quick_add": 1,
+        "is_user_defined": 0
+      },
+      {
+        "id": 8,
+        "code": "pincode",
+        "name": {
+          "en": "Pincode",
+          "gj": "પિનકોડ",
+          "hi": "पिनकोड",
+          "ka": "ಪಿನ್‌ಕೋಡ್",
+          "mt": "पिनकोड",
+          "tm": "பின்கோடு",
+          "tl": "పిన్‌కోడ్"
+        },
+        "placeholder": {
+          "en": "Enter Pincode",
+          "gj": "પિનકોડ દાખલ કરો",
+          "hi": "पिनकोड दर्ज करें",
+          "ka": "ಪಿನ್‌ಕೋಡ್ ನಮೂದಿಸಿ",
+          "mt": "पिनकोड नोंदवा",
+          "tm": "பின்கோடு உள்ளிடவும்",
+          "tl": "పిన్‌కోడ్ నమోదు చేయండి"
+        },
+        "type": "text",
+        "lookup_type": "traveller_forms",
+        "sort_order": null,
+        "validation": null,
+        "is_required": 1,
+        "is_unique": 0,
+        "quick_add": 1,
+        "is_user_defined": 0
+      },
+      {
+        "id": 9,
+        "code": "nominee_for_travel_insurance_policy",
+        "name": {
+          "en": "Nominee (for travel insurance policy)",
+          "gj": "યાત્રા વીમા નોમિની",
+          "hi": "यात्रा बीमा नामांकन",
+          "ka": "ಯಾತ್ರಾ ವಿಮಾನ ಪಾಲಿಸಿಗಾಗಿ ನಾಮಿನಿ",
+          "mt": "यात्रा विमा नामांकन",
+          "tm": "பயண காப்பீடு கொள்கையில் புரியப்பட்டவர்",
+          "tl": "ప్రయాణ వీమా పాలిసీ కోసం అనుమతి"
+        },
+        "placeholder": {
+          "en": "Enter Nominee (for travel insurance policy)",
+          "gj": "નોમિની દાખલ કરો (યાત્રા વીમા નોમિની)",
+          "hi": "यात्रा बीमा नामांकन दर्ज करें",
+          "ka": "ಯಾತ್ರಾ ವಿಮಾನ ಪಾಲಿಸಿಗಾಗಿ ನಾಮಿನಿ ನಮೂದಿಸಿ",
+          "mt": "यात्रा विमा नामांकन नमुने",
+          "tm": "பயண காப்பீடு கொள்கையில் புரியப்பட்டவரின் பெயரை உள்ளிடவும்",
+          "tl": "ప్రయాణ వీమా పాలిసీ కోసం నామినీను ఎంటర్ చేయండి"
+        },
+        "type": "text",
+        "lookup_type": "traveller_forms",
+        "sort_order": null,
+        "validation": null,
+        "is_required": 1,
+        "is_unique": 0,
+        "quick_add": 1,
+        "is_user_defined": 0
+      },
+      {
+        "id": 10,
+        "code": "pre_existing_disease_for_travel_insurance_policy",
+        "name": {
+          "en": "Pre existing disease (for travel insurance policy)",
+          "gj": "પૂર્વવર્તમાન રોગ (માટે મફત યાત્રા બીમા નીતિ)",
+          "hi": "यात्रा बीमा नीति के लिए पूर्व मौजूदा बीमारी",
+          "ka": "ಯಾತ್ರಾ ವಿಮಾನ ಪಾಲಿಸಿ ಹಾಗೂ ಸೇರುವ ಹಳೆಯ ರೋಗ",
+          "mt": "यात्रा विमा धरीता साठी पूर्व मौजूद रोग",
+          "tm": "பயண காப்பீடு கட்டாயம் பழக்கமான நோய்",
+          "tl": "ప్రేసెంట్ ట్రావెల్ ఇన్షూరన్స్ పాలిసీ కోసం పూర్వవర్తమాన వ్యాధి"
+        },
+        "placeholder": {
+          "en": "Enter Pre existing disease (for travel insurance policy)",
+          "gj": "પૂર્વવર્તમાન રોગ દાખલ કરો (માટે મફત યાત્રા બીમા નીતિ)",
+          "hi": "पूर्व मौजूदा बीमारी दर्ज करें (यात्रा बीमा नीति के लिए)",
+          "ka": "ಯಾತ್ರಾ ವಿಮಾನ ಪಾಲಿಸಿ ಹಾಗೂ ಸೇರುವ ಹಳೆಯ ರೋಗ ನಮೂದಿಸಿ",
+          "mt": "यात्रा विमा धरीता साठी ಹಳೆಯ ರೋಗ ನಮೂದಿಸಿ",
+          "tm": "பயண காப்பீடு கட்டாயம் பழக்கமான நோயை உள்ளிடவும்",
+          "tl": "ప్రేసెంట్ ట్రావెల్ ఇన్షూరన్స్ పాలిసీ కోసం పూర్వవర్తమాన వ్యాధిని ఎంటర్ చేయండి"
+        },
+        "type": "text",
+        "lookup_type": "traveller_forms",
+        "sort_order": null,
+        "validation": null,
+        "is_required": 1,
+        "is_unique": 0,
+        "quick_add": 1,
+        "is_user_defined": 0
+      },
+      {
+        "id": 11,
+        "code": "marriage_anniversary",
+        "name": {
+          "en": "Marriage Anniversary",
+          "gj": "વિવાહ સાલગિરહ",
+          "hi": "विवाह जयंती",
+          "ka": "ಮೆರೇಜ್ ಸಂಬಂಧದ ವಾರ್ಷಿಕೋತ್ಸವ",
+          "mt": "विवाह वार्षिकी",
+          "tm": "கல்யாண ஆண்டுபண்டு",
+          "tl": "వివాహ వార్షికోత్సవ"
+        },
+        "placeholder": {
+          "en": "Select Marriage Anniversary Date",
+          "gj": "પરંતુ માટે વિવાહ સાલગિરહ તારીખ પસંદ કરો",
+          "hi": "विवाह जयंती तिथि का चयन करें",
+          "ka": "ಮೆರೇಜ್ ಸಂಬಂಧದ ವಾರ್ಷಿಕೋತ್ಸವ ದಿನಾಂಕವನ್ನು ಆಯ್ಕೆಮಾಡಿ",
+          "mt": "विवाह वार्षिकी तारीख निवडा",
+          "tm": "கல்யாண ஆண்டுபண்டு தேதி தேர்ந்தெடுக்கவும்",
+          "tl": "వివాహ వార్షికోత్సవ తేదీని ఎంచుకోండి"
+        },
+        "type": "date",
+        "lookup_type": "traveller_forms",
+        "sort_order": null,
+        "validation": null,
+        "is_required": 1,
+        "is_unique": 0,
+        "quick_add": 1,
+        "is_user_defined": 0
+      },
+      {
+        "id": 12,
+        "code": "food_preferences",
+        "name": {
+          "en": "Food Preferences",
+          "gj": "ખોરાકના પસંદગો",
+          "hi": "खाद्य पसंद",
+          "ka": "ಆಹಾರ ಆಸಕ್ತಿಗಳು",
+          "mt": "अन्न प्राधिकृतियाँ",
+          "tm": "உணவு விருப்பங்கள்",
+          "tl": "ఆహార ఇష్టాలు"
+        },
+        "placeholder": [],
+        "type": "select",
+        "lookup_type": "traveller_forms",
+        "sort_order": null,
+        "validation": null,
+        "is_required": 1,
+        "is_unique": 0,
+        "quick_add": 1,
+        "is_user_defined": 0,
+        "options": [
+          {
+            "id": 3,
+            "name": "Veg"
+          },
+          {
+            "id": 4,
+            "name": "Non-Veg"
+          },
+          {
+            "id": 5,
+            "name": "Jain"
+          }
+        ]
+      },
+      {
+        "id": 13,
+        "code": "passport_front",
+        "name": {
+          "en": "Passport Front",
+          "gj": "પાસપોર્ટ આગળ",
+          "hi": "पासपोर्ट का फ्रंट",
+          "ka": "ಪಾಸ್‌ಪೋರ್ಟ್ ಮುಂದು",
+          "mt": "पासपोर्ट समोर",
+          "tm": "பாஸ்போர்ட் முன்",
+          "tl": "పాస్‌పోర్టు ముందు"
+        },
+        "placeholder": [],
+        "type": "file",
+        "lookup_type": "traveller_forms",
+        "sort_order": null,
+        "validation": null,
+        "is_required": 1,
+        "is_unique": 0,
+        "quick_add": 1,
+        "is_user_defined": 0
+      },
+      {
+        "id": 14,
+        "code": "passport_back",
+        "name": {
+          "en": "Passport Back",
+          "gj": "પાસપોર્ટ પાછળ",
+          "hi": "पासपोर्ट की पीठ",
+          "ka": "ಪಾಸ್‌ಪೋರ್ಟ್ ಹಿಂದೆ",
+          "mt": "पासपोर्ट पाठ",
+          "tm": "பாஸ்போர்டு பின்பு",
+          "tl": "పాస్‌పోర్టు వెనక్కి"
+        },
+        "placeholder": [],
+        "type": "file",
+        "lookup_type": "traveller_forms",
+        "sort_order": null,
+        "validation": null,
+        "is_required": 1,
+        "is_unique": 0,
+        "quick_add": 1,
+        "is_user_defined": 0
+      },
+      {
+        "id": 15,
+        "code": "passport_merged",
+        "name": {
+          "en": "Passport Merged",
+          "gj": "પાસપોર્ટ મર્જ",
+          "hi": "पासपोर्ट मर्ज",
+          "ka": "ಪಾಸ್ಪೋರ್ಟ್ ವಿಲೀನ",
+          "mt": "पासपोर्ट विलीन",
+          "tm": "பாஸ்போர்ட் ஒருமினம்",
+          "tl": "పాస్‌పోర్టు విలీన"
+        },
+        "placeholder": [],
+        "type": "file",
+        "lookup_type": "traveller_forms",
+        "sort_order": null,
+        "validation": null,
+        "is_required": 1,
+        "is_unique": 0,
+        "quick_add": 1,
+        "is_user_defined": 0
+      },
+      {
+        "id": 16,
+        "code": "passport_issue_date",
+        "name": {
+          "en": "Passport Issue Date",
+          "gj": "પાસપોર્ટ ઇસ્યુ તારીખ",
+          "hi": "पासपोर्ट जारी करने की तारीख",
+          "ka": "ಪಾಸ್‌ಪೋರ್ಟ್ ಇಷ್ಯೂ ದಿನಾಂಕ",
+          "mt": "पासपोर्ट इश्यू तारीख",
+          "tm": "பாஸ்போர்ட் இசு தேதி",
+          "tl": "పాస్‌పోర్ట్ ఇష్యూ తేది"
+        },
+        "placeholder": {
+          "en": "Select Passport Issue Date",
+          "gj": "પાસપોર્ટ ઇસ્યુ તારીખ પસંદ કરો",
+          "hi": "पासपोर्ट जारी करने की तारीख चुनें",
+          "ka": "ಪಾಸ್‌ಪೋರ್ಟ್ ಇಷ್ಯೂ ದಿನಾಂಕ ಆರಿಸಿ",
+          "mt": "पासपोर्ट इश्यू तारीख निवडा",
+          "tm": "பாஸ்போர்ட் இசு தேதி தேர்ந்தெடுக்கவும்",
+          "tl": "పాస్‌పోర్ట్ ఇష్యూ తేదిని ఎంచుకోండి"
+        },
+        "type": "date",
+        "lookup_type": "traveller_forms",
+        "sort_order": null,
+        "validation": null,
+        "is_required": 1,
+        "is_unique": 0,
+        "quick_add": 1,
+        "is_user_defined": 0
+      },
+      {
+        "id": 17,
+        "code": "passport_expiry_date",
+        "name": {
+          "en": "Passport Expiry Date",
+          "gj": "પાસપોર્ટ સમાપ્તિ તારીખ",
+          "hi": "पासपोर्ट समाप्ति तिथि",
+          "ka": "ಪಾಸ್ಪೋರ್ಟ್ ಅವಸಾನ ದಿನಾಂಕ",
+          "mt": "पासपोर्ट समाप्ति तिथि",
+          "tm": "பாஸ்போர்டு காலாவதி தேதி",
+          "tl": "పాస్పోర్ట్ కాలమైన తేది"
+        },
+        "placeholder": {
+          "en": "Select Passport Expiry Date",
+          "gj": "પાસપોર્ટ સમાપ્તિ તારીખ પસંદ કરો",
+          "hi": "पासपोर्ट समाप्ति तिथि का चयन करें",
+          "ka": "ಪಾಸ್ಪೋರ್ಟ್ ಅವಸಾನ ದಿನಾಂಕವನ್ನು ಆಯ್ಕೆಮಾಡಿ",
+          "mt": "पासपोर्ट समाप्ति तिथि निवडा",
+          "tm": "பாஸ்போர்டு காலாவதி தேதி தேர்ந்தெடுக்கவும்",
+          "tl": "పాస్పోర్ట్ కాలమైన తేదిని ఎంచుకోండి"
+        },
+        "type": "date",
+        "lookup_type": "traveller_forms",
+        "sort_order": null,
+        "validation": null,
+        "is_required": 1,
+        "is_unique": 0,
+        "quick_add": 1,
+        "is_user_defined": 0
+      },
+      {
+        "id": 18,
+        "code": "passport_issue_place",
+        "name": {
+          "en": "Passport Issue Place",
+          "gj": "પાસપોર્ટ ઇસ્યુ સ્થાન",
+          "hi": "पासपोर्ट इश्यू स्थान",
+          "ka": "ಪಾಸ್‌ಪೋರ್ಟ್ ಇಸ್ಯೂ ಸ್ಥಾನ",
+          "mt": "पासपोर्ट इश्यू स्थान",
+          "tm": "கடவுச்சீட்டு இடம்",
+          "tl": "పాస్‌పోర్ట్ ఇష్యూ ప్లేస్"
+        },
+        "placeholder": {
+          "en": "Enter Passport Issue Place",
+          "gj": "પાસપોર્ટ ઇસ્યુ સ્થાન દાખલ કરો",
+          "hi": "पासपोर्ट इश्यू स्थान दर्ज करें",
+          "ka": "ಪಾಸ್‌ಪೋರ್ಟ್ ಇಸ್ಯೂ ಸ್ಥಾನ ನಮೂದಿಸಿ",
+          "mt": "पासपोर्ट इश्यू स्थान नोंदवा",
+          "tm": "கடவுச்சீட்டு இடம் உள்ளிடவும்",
+          "tl": "పాస్‌పోర్ట్ ఇష్యూ ప్లేస్ నమోదు చేయండి"
+        },
+        "type": "text",
+        "lookup_type": "traveller_forms",
+        "sort_order": null,
+        "validation": null,
+        "is_required": 1,
+        "is_unique": 0,
+        "quick_add": 1,
+        "is_user_defined": 0
+      },
+      {
+        "id": 19,
+        "code": "passport_first_name",
+        "name": {
+          "en": "First Name",
+          "gj": "પ્રથમ નામ",
+          "hi": "पहला नाम",
+          "ka": "ಮೊದಲ ಹೆಸರು",
+          "mt": "पहिलं नाव",
+          "tm": "முதல் பெயர்",
+          "tl": "మొదటి పేరు"
+        },
+        "placeholder": {
+          "en": "Enter First Name",
+          "gj": "પ્રથમ નામ દાખલ કરો",
+          "hi": "पहला नाम दर्ज करें",
+          "ka": "ಮೊದಲ ಹೆಸರನ್ನು ನಮೂದಿಸಿ",
+          "mt": "पहिलं नाव टाळा",
+          "tm": "முதல் பெயரை உள்ளிடவும்",
+          "tl": "మొదటి పేరు నమోదు చేయండి"
+        },
+        "type": "text",
+        "lookup_type": "traveller_forms",
+        "sort_order": null,
+        "validation": null,
+        "is_required": 1,
+        "is_unique": 0,
+        "quick_add": 1,
+        "is_user_defined": 0
+      },
+      {
+        "id": 20,
+        "code": "passport_last_name",
+        "name": {
+          "en": "Last Name",
+          "gj": "અટક",
+          "hi": "अंतिम नाम",
+          "ka": "ಕೊನೆಯ ಹೆಸರು",
+          "mt": "अंतिम नाव",
+          "tm": "கடைசி பெயர்",
+          "tl": "చివరి పేరు"
+        },
+        "placeholder": {
+          "en": "Enter Last Name",
+          "gj": "અટક દાખલ કરો",
+          "hi": "अंतिम नाम दर्ज करें",
+          "ka": "ಕೊನೆಯ ಹೆಸರನ್ನು ನಮೂದಿಸಿ",
+          "mt": "अंतिम नाव नाव टाका",
+          "tm": "கடைசி பெயரை உள்ளிடவும்",
+          "tl": "చివరి పేరు నమోదించండి"
+        },
+        "type": "text",
+        "lookup_type": "traveller_forms",
+        "sort_order": null,
+        "validation": null,
+        "is_required": 1,
+        "is_unique": 0,
+        "quick_add": 1,
+        "is_user_defined": 0
+      },
+      {
+        "id": 21,
+        "code": "passport_number",
+        "name": {
+          "en": "Passport Number",
+          "gj": "પાસપોર્ટ નંબર",
+          "hi": "पासपोर्ट नंबर",
+          "ka": "ಪಾಸ್‌ಪೋರ್ಟ್ ಸಂಖ್ಯೆ",
+          "mt": "पासपोर्ट क्रमांक",
+          "tm": "பாஸ்போர்டு எண்",
+          "tl": "పాస్‌పోర్ట్ సంఖ్య"
+        },
+        "placeholder": {
+          "en": "Enter Passport Number",
+          "gj": "પાસપોર્ટ નંબર દાખલ કરો",
+          "hi": "पासपोर्ट नंबर दर्ज करें",
+          "ka": "ಪಾಸ್‌ಪೋರ್ಟ್ ಸಂಖ್ಯೆಯನ್ನು ನಮೂದಿಸಿ",
+          "mt": "पासपोर्ट क्रमांक प्रविष्ट करा",
+          "tm": "பாஸ்போர்டு எண் உள்ளிடவும்",
+          "tl": "పాస్‌పోర్ట్ సంఖ్య నమోదు చేయండి"
+        },
+        "type": "text",
+        "lookup_type": "traveller_forms",
+        "sort_order": null,
+        "validation": null,
+        "is_required": 1,
+        "is_unique": 0,
+        "quick_add": 1,
+        "is_user_defined": 0
+      },
+      {
+        "id": 22,
+        "code": "photo_id",
+        "name": {
+          "en": "Photo ID",
+          "gj": "ફોટો આઇડી",
+          "hi": "फ़ोटो आईडी",
+          "ka": "ಫೋಟೊ ಐಡಿ",
+          "mt": "फोटो आयडी",
+          "tm": "புகைப்பட ஐடி",
+          "tl": "ఫోటో ఐడి"
+        },
+        "placeholder": [],
+        "type": "file",
+        "lookup_type": "traveller_forms",
+        "sort_order": null,
+        "validation": null,
+        "is_required": 1,
+        "is_unique": 0,
+        "quick_add": 1,
+        "is_user_defined": 0
+      },
+      {
+        "id": 23,
+        "code": "photo_id_member_first_name",
+        "name": {
+          "en": "First Name",
+          "gj": "પ્રથમ નામ",
+          "hi": "पहला नाम",
+          "ka": "ಮೊದಲ ಹೆಸರು",
+          "mt": "पहिलं नाव",
+          "tm": "முதல் பெயர்",
+          "tl": "మొదటి పేరు"
+        },
+        "placeholder": {
+          "en": "Enter First Name",
+          "gj": "પ્રથમ નામ દાખલ કરો",
+          "hi": "पहला नाम दर्ज करें",
+          "ka": "ಮೊದಲ ಹೆಸರನ್ನು ನಮೂದಿಸಿ",
+          "mt": "पहिलं नाव टाळा",
+          "tm": "முதல் பெயரை உள்ளிடவும்",
+          "tl": "మొదటి పేరు నమోదు చేయండి"
+        },
+        "type": "text",
+        "lookup_type": "traveller_forms",
+        "sort_order": null,
+        "validation": null,
+        "is_required": 1,
+        "is_unique": 0,
+        "quick_add": 1,
+        "is_user_defined": 0
+      },
+      {
+        "id": 24,
+        "code": "photo_id_type",
+        "name": {
+          "en": "Type",
+          "gj": "પ્રકાર",
+          "hi": "प्रकार",
+          "ka": "ರೀತಿ",
+          "mt": "प्रकार",
+          "tm": "வகை",
+          "tl": "రకం"
+        },
+        "placeholder": [],
+        "type": "select",
+        "lookup_type": "traveller_forms",
+        "sort_order": null,
+        "validation": null,
+        "is_required": 1,
+        "is_unique": 0,
+        "quick_add": 1,
+        "is_user_defined": 0,
+        "options": [
+          {
+            "id": 6,
+            "name": "Adhaar card"
+          },
+          {
+            "id": 7,
+            "name": "PAN Card"
+          },
+          {
+            "id": 8,
+            "name": "Driving License"
+          },
+          {
+            "id": 9,
+            "name": "Voter ID"
+          }
+        ]
+      },
+      {
+        "id": 25,
+        "code": "photo_id_number",
+        "name": {
+          "en": "Photo ID Number",
+          "gj": "ફોટો આઈડી નંબર",
+          "hi": "फोटो आईडी नंबर",
+          "ka": "ಫೋಟೊ ಐಡಿ ಸಂಖ್ಯೆ",
+          "mt": "फोटो आयडी नंबर",
+          "tm": "புகைப்பட ஐடி எண்",
+          "tl": "ఫోటో ఐడీ నంబర్"
+        },
+        "placeholder": {
+          "en": "Enter Photo ID Number",
+          "gj": "ફોટો આઈડી નંબર દાખલ કરો",
+          "hi": "फोटो आईडी नंबर दर्ज करें",
+          "ka": "ಫೋಟೊ ಐಡಿ ಸಂಖ್ಯೆ ನಮೂದಿಸಿ",
+          "mt": "फोटो आयडी नंबर नोंदवा",
+          "tm": "புகைப்பட ஐடி எண் உள்ளிடவும்",
+          "tl": "ఫోటో ఐడీ నంబర్ నమోదు చేయండి"
+        },
+        "type": "text",
+        "lookup_type": "traveller_forms",
+        "sort_order": null,
+        "validation": null,
+        "is_required": 1,
+        "is_unique": 0,
+        "quick_add": 1,
+        "is_user_defined": 0
+      }
+    ]
+  },
+  "message": "Web form Updated successfully"
+}
