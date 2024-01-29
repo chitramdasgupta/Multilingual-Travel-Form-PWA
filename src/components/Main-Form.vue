@@ -8,7 +8,7 @@
       </div>
       <header class="header">
         <h1 class="heading">{{ jsonData.data.form_name }}</h1>
-        <img :src="jsonData.data.banner" alt="Banner image" height="20" width="20" />
+        <img :src="jsonData.data.banner" alt="Banner image" height="20" width="80" class="banner" />
         <p>{{ jsonData.data.header[this.language] || jsonData.data.header.en }}</p>
       </header>
 
@@ -41,7 +41,7 @@
         </form>
       </main>
 
-      <footer>
+      <footer class="footer">
         <p>{{ jsonData.data.footer[this.language] || jsonData.data.footer.en }}</p>
       </footer>
     </div>
@@ -116,6 +116,10 @@ export default {
   text-decoration: underline;
 }
 
+.banner {
+  max-width: 100%;
+}
+
 .main {
   width: 100%;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
@@ -137,16 +141,21 @@ export default {
 
 .form-input {
   padding: 0.25rem;
-  border: 1px solid #7c7c7c;
+  border: 1px solid lightgray;
   width: -webkit-fill-available;
   width: -moz-available;
+  background-color: #fff;
 }
 
 .form-submit {
   padding: 0.5rem 0.75rem 0.5rem 0.75rem;
-  box-shadow: rgba(0, 0, 0, 0.25) 0px 5px 15px;
+  border: none;
   text-wrap: wrap;
   font-weight: 700;
   color: #fff;
+}
+
+.footer {
+  color: #7d7c7c;
 }
 </style>
