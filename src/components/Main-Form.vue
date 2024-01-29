@@ -2,8 +2,11 @@
   <div>
     <div v-if="jsonData" :style="{ backgroundColor: jsonData.data.background_color }" class="container">
       <div>
-        <select v-model="language" @change="changeLanguage">
-          <option v-for="lang in jsonData.data.languages" :key="lang" :value="lang">{{ lang }}</option>
+        <label for="languageSelect">Select Language: </label>
+        <select id="languageSelect" v-model="language" @change="changeLanguage">
+          <option v-for="lang in jsonData.data.languages" :key="lang" :value="lang">
+            {{ languageNames[lang] || lang }}
+          </option>
         </select>
       </div>
       <header class="header">
@@ -55,6 +58,15 @@ export default {
       jsonData: null,
       fields: [],
       language: 'en',
+      languageNames: {
+        en: 'English',
+        hi: 'Hindi',
+        gj: 'Gujarati',
+        ka: 'Kannada',
+        mt: 'Marathi',
+        tm: 'Tamil',
+        tl: 'Telugu'
+      }
     }
   },
 
@@ -93,9 +105,8 @@ export default {
     },
 
     submit() {
-      console.log('Submit clicked')
       const enteredValues = this.fields.map((field) => `${field.name.en}: ${field.value}`)
-      alert(`Entered Values:\n${enteredValues.join('\n')}`)
+      alert(`${this.jsonData.data.submit_success_content}\n Entered Values:\n${enteredValues.join('\n')}`)
     },
 
     changeLanguage() {

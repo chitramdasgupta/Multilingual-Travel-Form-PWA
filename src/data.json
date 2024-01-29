@@ -195,7 +195,7 @@
           "tm": "மாநிலம் தேர்வு செய்க",
           "tl": "రాష్ట్రం ఎంచుకోండి"
         },
-        "type": "select",
+        "type": "text",
         "lookup_type": "states",
         "sort_order": null,
         "validation": null,
