@@ -1,10 +1,6 @@
 <template>
   <div>
-    <div
-      v-if="jsonData"
-      :style="{ backgroundColor: jsonData.data.background_color }"
-      class="container"
-    >
+    <div v-if="jsonData" :style="{ backgroundColor: jsonData.data.background_color }" class="container">
       <div>
         <label for="languageSelect">Select Language: </label>
         <select id="languageSelect" v-model="language" @change="changeLanguage">
@@ -28,25 +24,17 @@
             </label>
             <br />
 
-            <template
-              v-if="field.type === 'text' || field.type === 'date' || field.type === 'file'"
-            >
-              <input
-                :type="field.type"
-                :placeholder="field.placeholder"
-                v-model="field.value"
-                :required="field.is_required === 1"
-                class="form-input"
-              />
+            <template v-if="field.type === 'text' || field.type === 'date' || field.type === 'file'">
+              <!-- <input :type="field.type" :placeholder="field.placeholder" v-model="field.value"
+                :required="field.is_required === 1" class="form-input" /> -->
+              <input :type="field.type" :placeholder="field.placeholder" v-model="field.value" class="form-input" />
+              <div v-if="errors[field.code]" class="error-message">{{ errors[field.code] }}</div>
             </template>
 
             <template v-else-if="field.type === 'select'">
-              <select
-                :placeholder="field.placeholder"
-                v-model="field.value"
-                :required="field.is_required === 1"
-                class="form-input"
-              >
+              <!-- <select :placeholder="field.placeholder" v-model="field.value" :required="field.is_required === 1"
+                class="form-input"> -->
+              <select :placeholder="field.placeholder" v-model="field.value" class="form-input">
                 <option v-for="option in field.options" :key="option.id" :value="option.name">
                   {{ option.name }}
                 </option>
@@ -54,11 +42,7 @@
             </template>
           </div>
 
-          <button
-            type="submit"
-            :style="{ backgroundColor: jsonData.data.form_submit_button_color }"
-            class="form-submit"
-          >
+          <button type="submit" :style="{ backgroundColor: jsonData.data.form_submit_button_color }" class="form-submit">
             {{ jsonData.data.submit_button_label }}
           </button>
         </form>
@@ -86,7 +70,8 @@ export default {
         mt: 'Marathi',
         tm: 'Tamil',
         tl: 'Telugu'
-      }
+      },
+      errors: {},
     }
   },
 
@@ -108,6 +93,7 @@ export default {
             id: field.id,
             name: field.name[this.language],
             type: field.type,
+            code: field.code,
             placeholder: field.placeholder[this.language],
             value: '',
             is_required: field.is_required
@@ -125,15 +111,42 @@ export default {
     },
 
     submit() {
-      const enteredValues = this.fields.map((field) => `${field.name.en}: ${field.value}`)
-      alert(
-        `${this.jsonData.data.submit_success_content}\n Entered Values:\n${enteredValues.join('\n')}`
-      )
+      console.log('Submit clicked')
+      // Reset errors object
+      this.errors = {};
+      console.log(this.fields.some(field => field.code === "date_of_birth"))
+      // Validate date_of_birth field
+      if (this.fields.some(field => field.code === "date_of_birth" && this.validateDateOfBirth(field.value))) {
+        // Display error message for date_of_birth field
+        this.errors.date_of_birth = 'Date of birth cannot be in the future.';
+      }
+      console.log(this.errors);
+      // Check if there are any errors
+      if (Object.keys(this.errors).length === 0) {
+        // No errors, proceed with form submission
+        const enteredValues = this.fields.map(field => `${field.name.en}: ${field.value}`);
+        alert(`${this.jsonData.data.submit_success_content}\n Entered Values:\n${enteredValues.join('\n')}`);
+      }
     },
 
     changeLanguage() {
       this.fetchJsonData()
-    }
+    },
+
+    // validation methods
+    validateDateOfBirth(date) {
+      console.log('Validate method callled')
+      // Assuming date is in format yyyy-mm-dd
+      const selectedDate = new Date(date);
+      const currentDate = new Date();
+
+      console.log(selectedDate);
+      console.log(currentDate);
+      console.log(selectedDate > currentDate);
+
+      // Compare selected date with current date
+      return selectedDate > currentDate;
+    },
   }
 }
 </script>
@@ -186,6 +199,10 @@ export default {
   text-wrap: wrap;
   font-weight: 700;
   color: #fff;
+}
+
+.error-message {
+  color: red;
 }
 
 .footer {
