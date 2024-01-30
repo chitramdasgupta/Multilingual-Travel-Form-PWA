@@ -1,6 +1,10 @@
 <template>
   <div>
-    <div v-if="jsonData" :style="{ backgroundColor: jsonData.data.background_color }" class="container">
+    <div
+      v-if="jsonData"
+      :style="{ backgroundColor: jsonData.data.background_color }"
+      class="container"
+    >
       <div>
         <label for="languageSelect">Select Language: </label>
         <select id="languageSelect" v-model="language" @change="changeLanguage">
@@ -20,17 +24,29 @@
           <div v-for="field in fields" :key="field.id" class="form-field">
             <label :for="field.code" :style="{ color: jsonData.data.attribute_label_color }">
               {{ field.name }}
+              <span v-if="field.is_required === 1" style="color: red"> *</span>
             </label>
             <br />
 
-            <template v-if="field.type === 'text' || field.type === 'date' || field.type === 'file'">
-              <input :type="field.type" :placeholder="field.placeholder" v-model="field.value"
-                :required="field.is_required === 1" class="form-input" />
+            <template
+              v-if="field.type === 'text' || field.type === 'date' || field.type === 'file'"
+            >
+              <input
+                :type="field.type"
+                :placeholder="field.placeholder"
+                v-model="field.value"
+                :required="field.is_required === 1"
+                class="form-input"
+              />
             </template>
 
             <template v-else-if="field.type === 'select'">
-              <select :placeholder="field.placeholder" v-model="field.value" :required="field.is_required === 1"
-                class="form-input">
+              <select
+                :placeholder="field.placeholder"
+                v-model="field.value"
+                :required="field.is_required === 1"
+                class="form-input"
+              >
                 <option v-for="option in field.options" :key="option.id" :value="option.name">
                   {{ option.name }}
                 </option>
@@ -38,7 +54,11 @@
             </template>
           </div>
 
-          <button type="submit" :style="{ backgroundColor: jsonData.data.form_submit_button_color }" class="form-submit">
+          <button
+            type="submit"
+            :style="{ backgroundColor: jsonData.data.form_submit_button_color }"
+            class="form-submit"
+          >
             {{ jsonData.data.submit_button_label }}
           </button>
         </form>
@@ -106,11 +126,13 @@ export default {
 
     submit() {
       const enteredValues = this.fields.map((field) => `${field.name.en}: ${field.value}`)
-      alert(`${this.jsonData.data.submit_success_content}\n Entered Values:\n${enteredValues.join('\n')}`)
+      alert(
+        `${this.jsonData.data.submit_success_content}\n Entered Values:\n${enteredValues.join('\n')}`
+      )
     },
 
     changeLanguage() {
-      this.fetchJsonData();
+      this.fetchJsonData()
     }
   }
 }
