@@ -1,7 +1,7 @@
 <template>
   <form @submit.prevent="submit" class="form-main">
     <FormField v-for="field in fields" :key="field.id" :fieldData="field" :attributeLabelColor="attributeLabelColor"
-      :errors="errors" @fileUpload="handleFileUpload" />
+      :errors="errors" @fileUpload="handleFileUpload" @update-value="handleValueUpdate" />
     <FormSubmitButton :buttonText="submitButtonLabel" :buttonColor="submitButtonColor" />
   </form>
 </template>
@@ -117,6 +117,9 @@ export default {
         alert(`${this.jsonData.data.submit_success_content}\n Entered Values:\n${enteredValues.join('\n')}`);
       }
     },
+    handleValueUpdate({ id, value }) {
+      this.$emit('update-field-value', { id, value });
+    }
 
   },
 };

@@ -6,7 +6,7 @@
         <FormComponent :fields="fields" :attributeLabelColor="jsonData.data.attribute_label_color" :errors="errors"
           :submitButtonLabel="jsonData.data.submit_button_label"
           :submitButtonColor="jsonData.data.form_submit_button_color" @update-field="handleFieldUpdate"
-          @update-errors="errors = $event" />
+          @update-errors="errors = $event" @update-field-value="handleFieldValueUpdate" />
       </main>
       <FormFooter :footerText="jsonData.data.footer[language] || jsonData.data.footer.en" />
     </div>
@@ -96,6 +96,15 @@ export default {
       this.fields = this.fields.map(field => {
         if (field.id === fieldData.id) {
           return { ...field, value: file };
+        }
+        return field;
+      });
+    },
+
+    handleFieldValueUpdate({ id, value }) {
+      this.fields = this.fields.map(field => {
+        if (field.id === id) {
+          return { ...field, value: value };
         }
         return field;
       });

@@ -7,16 +7,19 @@
     <br />
 
     <template v-if="fieldData.type === 'text' || fieldData.type === 'date'">
-      <input :type="fieldData.type" :placeholder="fieldData.placeholder" v-model="fieldData.value" class="form-input" />
+      <input :type="fieldData.type" :placeholder="fieldData.placeholder" :value="fieldValue"
+        @input="fieldValue = $event.target.value" class="form-input" />
     </template>
 
     <template v-else-if="fieldData.type === 'select'">
-      <select :placeholder="fieldData.placeholder" v-model="fieldData.value" class="form-input">
+      <select :placeholder="fieldData.placeholder" :value="selectValue" @input="selectValue = $event.target.value"
+        class="form-input">
         <option v-for="option in fieldData.options" :key="option.id" :value="option.name">
           {{ option.name }}
         </option>
       </select>
     </template>
+
 
     <template v-else-if="fieldData.type === 'file'">
       <input type="file" @change="$emit('fileUpload', $event, fieldData)" class="form-input" />
@@ -33,6 +36,24 @@
 <script>
 export default {
   props: ['fieldData', 'attributeLabelColor', 'errors'],
+  computed: {
+    fieldValue: {
+      get() {
+        return this.fieldData.value;
+      },
+      set(newValue) {
+        this.$emit('update-value', { id: this.fieldData.id, value: newValue });
+      },
+    },
+    selectValue: {
+      get() {
+        return this.fieldData.value;
+      },
+      set(newValue) {
+        this.$emit('update-value', { id: this.fieldData.id, value: newValue });
+      },
+    },
+  },
 };
 </script>
   
