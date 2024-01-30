@@ -6,10 +6,8 @@
         <form @submit.prevent="submit" class="form-main">
           <FormField v-for="field in fields" :key="field.id" :fieldData="field"
             :attributeLabelColor="jsonData.data.attribute_label_color" :errors="errors" @fileUpload="handleFileUpload" />
-
-          <button type="submit" :style="{ backgroundColor: jsonData.data.form_submit_button_color }" class="form-submit">
-            {{ jsonData.data.submit_button_label }}
-          </button>
+          <FormSubmitButton :buttonText="jsonData.data.submit_button_label"
+            :buttonColor="jsonData.data.form_submit_button_color" />
         </form>
       </main>
 
@@ -24,10 +22,12 @@
 <script>
 import FormHeader from './FormHeader.vue';
 import FormField from './FormField.vue';
+import FormSubmitButton from './FormSubmitButton.vue';
 export default {
   components: {
     FormHeader,
     FormField,
+    FormSubmitButton,
   },
   data() {
     return {
