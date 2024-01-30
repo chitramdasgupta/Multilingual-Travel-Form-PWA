@@ -1,55 +1,11 @@
 <template>
   <div>
     <div v-if="jsonData" :style="{ backgroundColor: jsonData.data.background_color }" class="container">
-      <div>
-        <label for="languageSelect">Select Language: </label>
-        <select id="languageSelect" v-model="language" @change="changeLanguage">
-          <option v-for="lang in jsonData.data.languages" :key="lang" :value="lang">
-            {{ languageNames[lang] || lang }}
-          </option>
-        </select>
-      </div>
-      <header class="header">
-        <h1 class="heading">{{ jsonData.data.form_name }}</h1>
-        <img :src="jsonData.data.banner" alt="Banner image" height="20" width="80" class="banner" />
-        <p>{{ jsonData.data.header[this.language] || jsonData.data.header.en }}</p>
-      </header>
-
+      <FormHeader :jsonData="jsonData" :language="language" @languageChanged="updateLanguage" />
       <main :style="{ backgroundColor: jsonData.data.form_background_color }" class="main">
         <form @submit.prevent="submit" class="form-main">
-          <div v-for="field in fields" :key="field.id" class="form-field">
-            <label :for="field.code" :style="{ color: jsonData.data.attribute_label_color }">
-              {{ field.name }}
-              <span v-if="field.is_required === 1" style="color: red"> *</span>
-            </label>
-            <br />
-
-            <template v-if="field.type === 'text' || field.type === 'date'">
-              <input :type="field.type" :placeholder="field.placeholder" v-model="field.value" class="form-input" />
-              <div v-if="errors[field.code]" class="error-message">
-                <span v-for="(error, index) in errors[field.code]" :key="index">
-                  <span>{{ error }}</span><br>
-                </span>
-              </div>
-            </template>
-
-            <template v-else-if="field.type === 'select'">
-              <select :placeholder="field.placeholder" v-model="field.value" class="form-input">
-                <option v-for="option in field.options" :key="option.id" :value="option.name">
-                  {{ option.name }}
-                </option>
-              </select>
-            </template>
-
-            <template v-else-if="field.type === 'file'">
-              <input type="file" @change="handleFileUpload($event, field)" class="form-input" />
-              <div v-if="errors[field.code]" class="error-message">
-                <span v-for="(error, index) in errors[field.code]" :key="index">
-                  <span>{{ error }}</span><br>
-                </span>
-              </div>
-            </template>
-          </div>
+          <FormField v-for="field in fields" :key="field.id" :fieldData="field"
+            :attributeLabelColor="jsonData.data.attribute_label_color" :errors="errors" @fileUpload="handleFileUpload" />
 
           <button type="submit" :style="{ backgroundColor: jsonData.data.form_submit_button_color }" class="form-submit">
             {{ jsonData.data.submit_button_label }}
@@ -66,7 +22,13 @@
 
 
 <script>
+import FormHeader from './FormHeader.vue';
+import FormField from './FormField.vue';
 export default {
+  components: {
+    FormHeader,
+    FormField,
+  },
   data() {
     return {
       jsonData: null,
@@ -120,9 +82,25 @@ export default {
       }
     },
 
-    handleFileUpload(event, field) {
+    handleFileUpload(event, fieldData) {
       const file = event.target.files[0];
-      field.value = file;
+      this.fields = this.fields.map(field => {
+        if (field.id === fieldData.id) {
+          return { ...field, value: file };
+        }
+        return field;
+      });
+    },
+
+    updateLanguage(newLanguage) {
+      this.language = newLanguage;
+      this.fields = this.fields.map(field => {
+        return {
+          ...field,
+          name: this.jsonData.data.attributes.find(attr => attr.id === field.id).name[this.language],
+          placeholder: this.jsonData.data.attributes.find(attr => attr.id === field.id).placeholder[this.language]
+        };
+      });
     },
 
     submit() {
@@ -225,19 +203,11 @@ export default {
 }
 </script>
 
-<style scoped>
+<style>
 .container {
   display: flex;
   flex-direction: column;
   align-items: center;
-}
-
-.heading {
-  text-decoration: underline;
-}
-
-.banner {
-  max-width: 100%;
 }
 
 .main {

@@ -1,5 +1,5 @@
 <script>
-import MainForm from './components/Main-Form.vue'
+import MainForm from './components/MainForm.vue'
 
 export default {
   name: 'App',
