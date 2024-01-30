@@ -276,6 +276,10 @@ export default {
   cursor: pointer;
 }
 
+.form-submit:hover {
+  background-color: #2626c1 !important;
+}
+
 .error-message {
   color: red;
 }
