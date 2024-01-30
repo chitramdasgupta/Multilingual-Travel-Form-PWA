@@ -36,5 +36,17 @@ export default {
 };
 </script>
   
-<style scoped></style>
+<style scoped>
+.form-field {
+  margin-bottom: 1rem;
+}
+
+.form-input {
+  padding: 0.25rem;
+  border: 1px solid lightgray;
+  width: -webkit-fill-available;
+  width: -moz-available;
+  background-color: #fff;
+}
+</style>
   
