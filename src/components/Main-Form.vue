@@ -273,6 +273,7 @@ export default {
   text-wrap: wrap;
   font-weight: 700;
   color: #fff;
+  cursor: pointer;
 }
 
 .error-message {
