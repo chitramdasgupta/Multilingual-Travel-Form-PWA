@@ -3,8 +3,8 @@
     <div v-if="jsonData" :style="{ backgroundColor: jsonData.data.background_color }" class="container">
       <FormHeader :jsonData="jsonData" :language="language" @languageChanged="updateLanguage" />
       <main :style="{ backgroundColor: jsonData.data.form_background_color }" class="main">
-        <FormComponent :fields="fields" :attributeLabelColor="jsonData.data.attribute_label_color" :errors="errors"
-          :submitButtonLabel="jsonData.data.submit_button_label"
+        <FormComponent :fields="fields" :jsonData="jsonData" :attributeLabelColor="jsonData.data.attribute_label_color"
+          :errors="errors" :submitButtonLabel="jsonData.data.submit_button_label"
           :submitButtonColor="jsonData.data.form_submit_button_color" @update-field="handleFieldUpdate"
           @update-errors="errors = $event" @update-field-value="handleFieldValueUpdate" />
       </main>

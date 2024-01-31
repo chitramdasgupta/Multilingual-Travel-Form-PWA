@@ -16,7 +16,7 @@ export default {
     FormField,
     FormSubmitButton,
   },
-  props: ['fields', 'attributeLabelColor', 'errors', 'submitButtonLabel', 'submitButtonColor'],
+  props: ['fields', 'attributeLabelColor', 'errors', 'submitButtonLabel', 'submitButtonColor', 'jsonData'],
   methods: {
     handleFileUpload(event, fieldData) {
       const file = event.target.files[0];
@@ -39,12 +39,12 @@ export default {
 
       if (Object.keys(collectedErrors).length === 0) {
         // No errors, proceed with form submission
-        const enteredValues = this.fields.map(field => `${field.name.en}: ${field.value}`);
-        alert(`${this.jsonData.data.submit_success_content}\n Entered Values:\n${enteredValues.join('\n')}`);
+        const enteredValues = this.fields.map(field => {
+          const fieldName = field.name[this.currentLanguage] || field.name;
+          return `${fieldName}: ${field.value}`;
+        });
+        alert(`${this.jsonData.data.submit_success_content}\n\n${enteredValues.join('\n')}`);
       }
-    },
-    handleValueUpdate({ id, value }) {
-      this.$emit('update-field-value', { id, value });
     }
 
   },
