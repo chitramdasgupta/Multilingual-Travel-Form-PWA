@@ -1,16 +1,16 @@
 <script>
-import MainForm from './components/MainForm.vue'
+import MainClient from './components/MainClient.vue'
 
 export default {
   name: 'App',
   components: {
-    MainForm
+    MainClient
   }
 }
 </script>
 
 <template>
-  <MainForm />
+  <MainClient />
 </template>
 
 <style scoped></style>
