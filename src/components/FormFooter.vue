@@ -6,8 +6,8 @@
 
 <script>
 export default {
-  props: ['footerText'],
-};
+  props: ['footerText']
+}
 </script>
 
 <style scoped>
@@ -15,4 +15,3 @@ export default {
   color: #7d7c7c;
 }
 </style>
-  

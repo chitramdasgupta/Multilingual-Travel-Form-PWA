@@ -15,7 +15,7 @@
     </header>
   </div>
 </template>
-  
+
 <script>
 export default {
   props: ['jsonData', 'language'],
@@ -29,18 +29,18 @@ export default {
         ka: 'Kannada',
         mt: 'Marathi',
         tm: 'Tamil',
-        tl: 'Telugu',
-      },
-    };
+        tl: 'Telugu'
+      }
+    }
   },
   methods: {
     emitLanguageChange() {
-      this.$emit('languageChanged', this.selectedLanguage);
-    },
-  },
-};
+      this.$emit('languageChanged', this.selectedLanguage)
+    }
+  }
+}
 </script>
-  
+
 <style>
 .heading {
   text-decoration: underline;
@@ -50,4 +50,3 @@ export default {
   max-width: 100%;
 }
 </style>
-  

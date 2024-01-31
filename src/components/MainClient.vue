@@ -1,12 +1,23 @@
 <template>
   <div>
-    <div v-if="jsonData" :style="{ backgroundColor: jsonData.data.background_color }" class="container">
+    <div
+      v-if="jsonData"
+      :style="{ backgroundColor: jsonData.data.background_color }"
+      class="container"
+    >
       <FormHeader :jsonData="jsonData" :language="language" @languageChanged="updateLanguage" />
       <main :style="{ backgroundColor: jsonData.data.form_background_color }" class="main">
-        <FormComponent :fields="fields" :jsonData="jsonData" :attributeLabelColor="jsonData.data.attribute_label_color"
-          :errors="errors" :submitButtonLabel="jsonData.data.submit_button_label"
-          :submitButtonColor="jsonData.data.form_submit_button_color" @update-field="handleFieldUpdate"
-          @update-errors="errors = $event" @update-field-value="handleFieldValueUpdate" />
+        <FormComponent
+          :fields="fields"
+          :jsonData="jsonData"
+          :attributeLabelColor="jsonData.data.attribute_label_color"
+          :errors="errors"
+          :submitButtonLabel="jsonData.data.submit_button_label"
+          :submitButtonColor="jsonData.data.form_submit_button_color"
+          @update-field="handleFieldUpdate"
+          @update-errors="errors = $event"
+          @update-field-value="handleFieldValueUpdate"
+        />
       </main>
       <FormFooter :footerText="jsonData.data.footer[language] || jsonData.data.footer.en" />
     </div>
@@ -14,15 +25,15 @@
 </template>
 
 <script>
-import FormHeader from './FormHeader.vue';
+import FormHeader from './FormHeader.vue'
 import FormComponent from './FormComponent.vue'
-import FormFooter from './FormFooter.vue';
+import FormFooter from './FormFooter.vue'
 
 export default {
   components: {
     FormHeader,
     FormComponent,
-    FormFooter,
+    FormFooter
   },
   data() {
     return {
@@ -38,7 +49,7 @@ export default {
         tm: 'Tamil',
         tl: 'Telugu'
       },
-      errors: {},
+      errors: {}
     }
   },
 
@@ -78,14 +89,17 @@ export default {
     },
 
     updateLanguage(newLanguage) {
-      this.language = newLanguage;
-      this.fields = this.fields.map(field => {
+      this.language = newLanguage
+      this.fields = this.fields.map((field) => {
         return {
           ...field,
-          name: this.jsonData.data.attributes.find(attr => attr.id === field.id).name[this.language],
-          placeholder: this.jsonData.data.attributes.find(attr => attr.id === field.id).placeholder[this.language]
-        };
-      });
+          name: this.jsonData.data.attributes.find((attr) => attr.id === field.id).name[
+            this.language
+          ],
+          placeholder: this.jsonData.data.attributes.find((attr) => attr.id === field.id)
+            .placeholder[this.language]
+        }
+      })
     },
 
     changeLanguage() {
@@ -93,22 +107,22 @@ export default {
     },
 
     handleFieldUpdate({ fieldData, file }) {
-      this.fields = this.fields.map(field => {
+      this.fields = this.fields.map((field) => {
         if (field.id === fieldData.id) {
-          return { ...field, value: file };
+          return { ...field, value: file }
         }
-        return field;
-      });
+        return field
+      })
     },
 
     handleFieldValueUpdate({ id, value }) {
-      this.fields = this.fields.map(field => {
+      this.fields = this.fields.map((field) => {
         if (field.id === id) {
-          return { ...field, value: value };
+          return { ...field, value: value }
         }
-        return field;
-      });
-    },
+        return field
+      })
+    }
   }
 }
 </script>
