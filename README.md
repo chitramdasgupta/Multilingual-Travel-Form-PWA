@@ -12,7 +12,7 @@
 
 ## Run the project
 
-First clone the repository, and then `cd` into it/
+First clone the repository, and then `cd` into it
 
 ```sh
 npm install
@@ -20,7 +20,6 @@ npm install
 
 ```sh
 npm run build && npx http-server dist
-# Press y when asked
 ```
 
 Then open `localhost:8080` in the browser.
