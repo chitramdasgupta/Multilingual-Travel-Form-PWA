@@ -1,7 +1,14 @@
 <template>
   <form @submit.prevent="submit" class="form-main">
-    <FormField v-for="field in fields" :key="field.id" :fieldData="field" :attributeLabelColor="attributeLabelColor"
-      :errors="errors" @fileUpload="handleFileUpload" @update-value="$emit('update-field-value', $event)" />
+    <FormField
+      v-for="field in fields"
+      :key="field.id"
+      :fieldData="field"
+      :attributeLabelColor="attributeLabelColor"
+      :errors="errors"
+      @fileUpload="handleFileUpload"
+      @update-value="$emit('update-field-value', $event)"
+    />
     <FormSubmitButton :buttonText="submitButtonLabel" :buttonColor="submitButtonColor" />
   </form>
 </template>
@@ -40,17 +47,17 @@ export default {
       return allErrors
     },
     submit() {
-      const collectedErrors = this.collectErrors();
+      const collectedErrors = this.collectErrors()
 
-      this.$emit('update-errors', collectedErrors);
+      this.$emit('update-errors', collectedErrors)
 
       if (Object.keys(collectedErrors).length === 0 && this.jsonData && this.jsonData.data) {
         // No errors, proceed with form submission
         const enteredValues = this.fields.map((field) => {
-          const fieldName = field.name[this.currentLanguage] || field.name;
-          return `${fieldName}: ${field.value}`;
-        });
-        alert(`${this.jsonData.data.submit_success_content}\n\n${enteredValues.join('\n')}`);
+          const fieldName = field.name[this.currentLanguage] || field.name
+          return `${fieldName}: ${field.value}`
+        })
+        alert(`${this.jsonData.data.submit_success_content}\n\n${enteredValues.join('\n')}`)
       }
     }
   }

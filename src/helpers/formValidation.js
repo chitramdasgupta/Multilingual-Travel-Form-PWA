@@ -28,7 +28,13 @@ export const validationFunctions = {
     isDateInFuture(value) ? 'Passport issue date cannot be in the future.' : null,
   passport_expiry_date: (value) =>
     !isDateInFuture(value) ? 'Expired passport is not accepted.' : null,
-  file: (value) =>
+  passport_front: (value) =>
+    value && !validateFileSize(value) ? 'File size must be less than or equal to 5 MB.' : null,
+  passport_back: (value) =>
+    value && !validateFileSize(value) ? 'File size must be less than or equal to 5 MB.' : null,
+  passport_merged: (value) =>
+    value && !validateFileSize(value) ? 'File size must be less than or equal to 5 MB.' : null,
+  photo_id: (value) =>
     value && !validateFileSize(value) ? 'File size must be less than or equal to 5 MB.' : null
 }
 
