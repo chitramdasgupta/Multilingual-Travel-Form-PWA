@@ -1,35 +1,26 @@
-# multilingual-forms-pwa
+# Multilingual Forms PWA
 
-This template should help get you started developing with Vue 3 in Vite.
+## Features
 
-## Recommended IDE Setup
+1. Dynamically renders a form from a parsed JSON file
+2. Simple and aesthetically pleasing
+3. Follows industry-standard coding standards
+4. Multilingual support (English, Hindi, Tamil, Telugu, Marathi, and so on)
+5. Proper validations
+6. Installable as a PWA
+7. Basic unit tests to check correctness
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+## Run the project
 
-## Customize configuration
-
-See [Vite Configuration Reference](https://vitejs.dev/config/).
-
-## Project Setup
+First clone the repository, and then `cd` into it/
 
 ```sh
 npm install
 ```
 
-### Compile and Hot-Reload for Development
-
 ```sh
-npm run dev
+npm run build && npx http-server dist
+# Press y when asked
 ```
 
-### Compile and Minify for Production
-
-```sh
-npm run build
-```
-
-### Lint with [ESLint](https://eslint.org/)
-
-```sh
-npm run lint
-```
+Then open `localhost:8080` in the browser.
